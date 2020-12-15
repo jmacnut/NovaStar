@@ -80,7 +80,8 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] private AudioClip _bombDropClip;
     [SerializeField] private AudioClip _orbShotClip;
     [SerializeField] private AudioClip _miniLaserClip;
-    
+
+    [SerializeField] private GameObject _bgColorChange;
     // Start is called before the first frame update
     void Start()
     {
