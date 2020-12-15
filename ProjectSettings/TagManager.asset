@@ -13,7 +13,6 @@ TagManager:
   - Player_Projectile
   - Brightness
   - PowerUp
-  - Environment
   layers:
   - Default
   - TransparentFX
@@ -23,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - Post Processsing
+  - PostProcessing
   - 
   - 
   - 
