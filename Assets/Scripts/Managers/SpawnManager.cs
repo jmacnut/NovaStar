@@ -35,11 +35,13 @@ public class SpawnManager : MonoBehaviour
     private GameObject[] objectsToDestroy;
     private GameObject _player;
     private WavePanelManager _wavePanelManager;
+    private PlayerScore _playerScore;
 
     void Start()
     {
         _player = GameObject.Find("Player");
         _wavePanelManager = GameObject.Find("Wave_Panel").GetComponent<WavePanelManager>();
+        _playerScore = GameObject.Find("Player").GetComponent<PlayerScore>();
 
         if (_player == null)
         {
@@ -179,6 +181,7 @@ public class SpawnManager : MonoBehaviour
     {
         _playerDied = true;
         _stopSpawning = true;
+        _playerScore.SetScore(0f);
         DestroyAllObjects();
     }
     public bool GetCheckPointStatus()

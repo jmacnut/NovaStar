@@ -13,6 +13,7 @@ public class EndPanelManager : MonoBehaviour
     private Score_Display_UI _playerScore;
     void Start()
    {
+        _endPanel = GameObject.Find("End_Panel");
         _playerScore = GameObject.Find("Canvas").GetComponent<Score_Display_UI>();
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         _finalScore = GameObject.Find("Endpanel_Score_Text").GetComponent<Text>();

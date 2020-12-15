@@ -39,4 +39,9 @@ public class PlayerScore : MonoBehaviour
     {
         return this._score;
     }
+
+    public void SetScore(float newScore)
+    {
+        this._score = newScore;
+    }
 }
