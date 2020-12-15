@@ -167,7 +167,10 @@ public class PlayerWeaponsFire : MonoBehaviour
                 _weaponPowerLevel++;
                 UpdateWeaponLevel();
             }
-            playerHealth.health = playerHealth.maximumHealth;
+            if (playerHealth.health < playerHealth.maximumHealth)
+            {
+                playerHealth.health++;
+            }
             SwitchPowerUp();
             
         }
