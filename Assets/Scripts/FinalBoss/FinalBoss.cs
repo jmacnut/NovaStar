@@ -66,17 +66,18 @@ public class FinalBoss : MonoBehaviour
 
     [SerializeField] private AudioClip _fightMusicSource;
     [SerializeField] private AudioClip _endMusicSource;
-    [SerializeField] private float _musicVolume = 1.0f;
+    [SerializeField] private float _musicVolume = .9f;
+    [SerializeField] private bool _startBGMusic = true;
 
     [SerializeField] private AudioClip _explosionSound;
     [SerializeField] private float _explosionVol;
     [SerializeField] protected float _explosionScale = 1.0f;
 
+    [SerializeField] private AudioClip _hitSound;
+
     // Start is called before the first frame update
     void Start()
-    {
-        AudioManager.Instance.PlayMusic(_fightMusicSource, _musicVolume);
-
+    {    
         //assigning current hp
         _curHp = _maxHp;
         transform.Rotate(new Vector3(0, 270, 0));
@@ -90,6 +91,11 @@ public class FinalBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_startBGMusic == true && _anim.GetCurrentAnimatorStateInfo(0).IsTag("2"))
+        {
+            AudioManager.Instance.PlayMusic(_fightMusicSource, _musicVolume);
+            _startBGMusic = false;
+        }
         //activates the second phase of the fight
         if (_curHp <= _maxHp * .5 && _stopHpCheck == false)
         {
@@ -282,6 +288,8 @@ public class FinalBoss : MonoBehaviour
     private void Damage(float _damage)
     {
         _curHp -= _damage;
+        AudioManager.Instance.PlayEffect(_hitSound, 1.0f);
+
         if (_curHp <= 0f)
         {
             _anim.enabled = false;
