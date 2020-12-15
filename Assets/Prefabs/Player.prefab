@@ -138,7 +138,8 @@ MonoBehaviour:
     type: 3}
   _fireRate: 0.25
   _willFire: -1
-  _weaponPowerUpID: 0
+  _weaponLevelString: []
+  _weaponPowerLevel: 0
   _weaponCurrentlyOn: 0
 --- !u!114 &4221743648848214150
 MonoBehaviour:
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b57e45a8f583b4bbb8a30ae58f8a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _score: 0
 --- !u!114 &-1550823475508340949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maximumHealth: 1
+  _explosionAnim: {fileID: 0}
 --- !u!1001 &2500564441248882274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,6 +262,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -8.57
       objectReference: {fileID: 0}
+    - target: {fileID: 9218140859402618341, guid: f0bda797df4b12b4c967bcbb630bc7ee,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c55a8d71016362843890a710dc38b015, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0bda797df4b12b4c967bcbb630bc7ee, type: 3}
 --- !u!4 &1092236023498884568 stripped
