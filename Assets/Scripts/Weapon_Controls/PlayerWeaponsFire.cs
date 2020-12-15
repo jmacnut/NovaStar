@@ -6,7 +6,7 @@ public class PlayerWeaponsFire : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject[] _weaponsPrefab;
+    public GameObject[] _weaponsPrefab;
 
     [SerializeField]
     private GameObject _chargeSprite;
@@ -167,7 +167,10 @@ public class PlayerWeaponsFire : MonoBehaviour
                 _weaponPowerLevel++;
                 UpdateWeaponLevel();
             }
-            playerHealth.health = playerHealth.maximumHealth;
+            if (playerHealth.health < playerHealth.maximumHealth)
+            {
+                playerHealth.health++;
+            }
             SwitchPowerUp();
             
         }
