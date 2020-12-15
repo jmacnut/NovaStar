@@ -1,19 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerHealthAndDamage : MonoBehaviour
 {
     [SerializeField]
-    public float health = 1;
+    public float health;
+    
     [SerializeField]
-    public float maximumHealth = 1;
+    public float maximumHealth;
 
     [SerializeField]
     private GameObject _explosionAnim;
 
     private PlayerWeaponsFire _playerWeapon;
     private SpawnManager _spawnManager;
+
     private void Start()
     {
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
@@ -27,41 +27,25 @@ public class PlayerHealthAndDamage : MonoBehaviour
         {
             Debug.LogError("Player Weapon is NULL");
         }
+
+        health = _playerWeapon._weaponsPrefab.Length;
+        maximumHealth = _playerWeapon._weaponsPrefab.Length;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     public void PlayerDamage()
     {
+        health -= 1;
+
         if (_playerWeapon._weaponPowerLevel > 0)
         {
-            _playerWeapon._weaponPowerLevel --;
+            _playerWeapon._weaponPowerLevel--;
             _playerWeapon.UpdateWeaponLevel();
-        }
-        else if (_playerWeapon._weaponPowerLevel == 0)
-        {
-            health -= .5f;
         }
 
         if (health <= 0)
         {
             this.gameObject.SetActive(false);
             Instantiate(_explosionAnim, transform.position, Quaternion.identity);           
-        }
-    }
-
-    //for testing
-    public void PlayerDamageTest()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            PlayerDamage();
-            //Debug.Log("Health= " + health);
         }
     }
 
