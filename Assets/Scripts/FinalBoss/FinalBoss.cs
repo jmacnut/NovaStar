@@ -64,9 +64,19 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] protected float _beamDamage = 1.0f;
     protected float _hitTime;
 
+    [SerializeField] private AudioClip _fightMusicSource;
+    [SerializeField] private AudioClip _endMusicSource;
+    [SerializeField] private float _musicVolume = 1.0f;
+
+    [SerializeField] private AudioClip _explosionSound;
+    [SerializeField] private float _explosionVol;
+    [SerializeField] protected float _explosionScale = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Instance.PlayMusic(_fightMusicSource, _musicVolume);
+
         //assigning current hp
         _curHp = _maxHp;
         transform.Rotate(new Vector3(0, 270, 0));
@@ -276,6 +286,7 @@ public class FinalBoss : MonoBehaviour
         {
             _anim.enabled = false;
             Instantiate(_explosionPrefab, _explosionPos.transform.position, Quaternion.identity);
+            AudioManager.Instance.PlayEffect(_explosionSound, 1.0f);
             Destroy(gameObject, 3.0f);
         }       
     }
