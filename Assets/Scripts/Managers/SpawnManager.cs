@@ -206,4 +206,9 @@ public class SpawnManager : MonoBehaviour
             Destroy(objectsToDestroy[i]);
         }
     }
+
+    public float GetWave()
+    {
+        return nextWave;
+    }
 }
