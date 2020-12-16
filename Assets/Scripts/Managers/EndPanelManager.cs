@@ -33,8 +33,12 @@ public class EndPanelManager : MonoBehaviour
         {
             Debug.Log("Cant find spawn manager");
         }
+    }
+
+    private void Update()
+    {
         _finalScore.text = "Final Score: " + _playerScore.GetUIScore();
-        _finalWave.text = "You survived " + _spawnManager.GetWave().ToString() + " waves";
+        _finalWave.text = "You survived " + _spawnManager.GetWave().ToString() + " total waves";
     }
 
     public void LoadLevel()
@@ -45,7 +49,7 @@ public class EndPanelManager : MonoBehaviour
 
     public void LoadCheckpoint()
     {
-        _spawnManager.SetStatus();
+        _spawnManager.RestartFromCheckpoint();
         _endPanel.SetActive(false);
     }
 

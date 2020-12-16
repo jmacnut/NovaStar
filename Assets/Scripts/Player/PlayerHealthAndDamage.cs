@@ -50,8 +50,9 @@ public class PlayerHealthAndDamage : MonoBehaviour
 
         if (health <= 0)
         {
-            this.gameObject.SetActive(false);
-            Instantiate(_explosionAnim, transform.position, Quaternion.identity);           
+            health = 1f; //keep in here, used for checkpoint system to reset player health
+            this.gameObject.SetActive(false); //inactive to prevent damage or input
+            Instantiate(_explosionAnim, transform.position, Quaternion.identity);
         }
     }
 
