@@ -161,10 +161,11 @@ MonoBehaviour:
   _beamHit: 0
   _onScreen: 0
   _dying: 0
-  _iFrameTime: 0.2
-  _beamDamage: 1
+  _iFrameTime: 0
+  _beamDamage: 0
   _explosionSound: {fileID: 8300000, guid: 89430df8e1f8d534abec43287ed5ce2a, type: 3}
   _explosionVol: 0.8
+  _shotSpeed: 70
   _weaponPrefabs:
   - {fileID: 6256109815664049991, guid: bfd89dbbf142a3a468121d9c93de2d00, type: 3}
   - {fileID: 1923279561761408386, guid: 6d3ff74658c8bbb4a9ec9565ee70e3ca, type: 3}

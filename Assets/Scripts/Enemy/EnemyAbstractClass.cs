@@ -25,17 +25,23 @@ public abstract class EnemyAbstractClass : MonoBehaviour
     [SerializeField] protected GameObject _powerUpPrefab;
     [SerializeField] protected Transform _weaponPos;
     [SerializeField] protected float _fireCD;
-    [SerializeField] protected float _fireRate = 2.0f;
+    [SerializeField] 
+    [Tooltip("The lower the number the faster it fires")]
+    protected float _fireRate = 3.0f;
 
     [SerializeField] protected bool _beamHit;
     [SerializeField] protected bool _onScreen;
     [SerializeField] protected bool _dying;
 
-    [SerializeField] protected float _iFrameTime = 0.2f;
-    [SerializeField] protected float _beamDamage = 1.0f;
+    [SerializeField] protected float _iFrameTime;
+    [SerializeField] protected float _beamDamage;
 
     [SerializeField] private AudioClip _explosionSound;
     [SerializeField] private float _explosionVol;
+
+    //private GameObject _firedShot;
+
+    [SerializeField] public float _shotSpeed;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -70,7 +76,10 @@ public abstract class EnemyAbstractClass : MonoBehaviour
         if (Time.time > _fireCD)
         {
             _fireCD = Time.time + _fireRate;
-            Instantiate(_enemyWeapon, _weaponPos.position, Quaternion.identity);
+
+            GameObject _firedShot = Instantiate(_enemyWeapon, _weaponPos.position, Quaternion.identity);
+            Debug.Log("Fired weapon");
+            _firedShot.GetComponent<EnemyShot>()._speed = _shotSpeed;
         }
     }
     public virtual void Damage(float _damageTaken)
@@ -117,7 +126,7 @@ public abstract class EnemyAbstractClass : MonoBehaviour
         int randomNum = Random.Range(1, 4);
         if (randomNum == 1)
         {
-            Instantiate(_powerUpPrefab, transform.position, Quaternion.identity);
+            Instantiate(_powerUpPrefab, transform.position, Quaternion.identity);    
         }
     }
     protected virtual void OnTriggerStay(Collider other)
@@ -169,6 +178,13 @@ public abstract class EnemyAbstractClass : MonoBehaviour
         if(other.tag == "Fireball")
         {
             Destroy(other.gameObject);
+        }
+
+
+        if(other.tag == "Beam")
+        {
+            _iFrameTime = other.GetComponent<LaserBeam>()._hitDelay;
+            _beamDamage = other.GetComponent<LaserBeam>()._damage;
         }
 
 
