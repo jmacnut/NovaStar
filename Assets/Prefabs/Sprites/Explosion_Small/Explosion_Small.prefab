@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animTime: 0.2
+  _sfxSource: {fileID: 0}
+  _volume: 1
 --- !u!1 &6004419887595609448
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +97,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c55a8d71016362843890a710dc38b015, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,7 +140,7 @@ Animator:
   m_GameObject: {fileID: 6004419887595609448}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f4ac68018901c41c09f6faba172f9493, type: 2}
+  m_Controller: {fileID: 9100000, guid: 70227d7406affbe439f8a5d53eb0e345, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

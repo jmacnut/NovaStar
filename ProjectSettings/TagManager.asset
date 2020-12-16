@@ -12,6 +12,7 @@ TagManager:
   - Music
   - Player_Projectile
   - Brightness
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 

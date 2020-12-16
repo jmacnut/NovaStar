@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 15
   player: {fileID: 0}
+  playerObj: {fileID: 0}
   _sfxSource: {fileID: 8300000, guid: 550a1a7bc47439c4fb0f8a2c2c7e849b, type: 3}
   _hitSfxsource: {fileID: 8300000, guid: 2945770ade5bbcf44a8453b552374fdd, type: 3}
   _explosionAnim: {fileID: 4494989596756331637, guid: 774e7f3be1393684ea4992602b212170,
@@ -4871,7 +4872,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: adc9ba09ae5db3c4caa9e29fddb4d9fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
