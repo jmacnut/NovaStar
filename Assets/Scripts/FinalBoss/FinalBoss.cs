@@ -82,6 +82,8 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] private AudioClip _miniLaserClip;
 
     [SerializeField] private GameObject _bgColorChange;
+
+    private CameraShake _cameraShake;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,6 +95,11 @@ public class FinalBoss : MonoBehaviour
         if (_anim == null)
         {
             Debug.LogError("No Anim");
+        }
+        _cameraShake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+        if (_cameraShake == null)
+        {
+            Debug.LogError("Camera Shake is NULL.");
         }
     }
     // Update is called once per frame
@@ -314,6 +321,7 @@ public class FinalBoss : MonoBehaviour
         {
             _anim.enabled = false;
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            StartCoroutine(_cameraShake.Shake(3.0f, 3.0f));
             Instantiate(_explosionPrefab, _explosionPos.transform.position, Quaternion.identity);
             AudioManager.Instance.PlayEffect(_explosionSound, 1.0f);
             Destroy(gameObject, 3.0f);

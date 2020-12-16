@@ -78,7 +78,6 @@ public abstract class EnemyAbstractClass : MonoBehaviour
             _fireCD = Time.time + _fireRate;
 
             GameObject _firedShot = Instantiate(_enemyWeapon, _weaponPos.position, Quaternion.identity);
-            Debug.Log("Fired weapon");
             _firedShot.GetComponent<EnemyShot>()._speed = _shotSpeed;
         }
     }
