@@ -78,7 +78,7 @@ public class PlayerWeaponsFire : MonoBehaviour
     void Update()
     { 
 
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > _willFire && _canShoot)
+        if (Input.GetKey(KeyCode.Space) && Time.time > _willFire && _canShoot)
         {
             FireShot();
         }

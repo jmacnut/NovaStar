@@ -14,6 +14,8 @@ public class PlayerHealthAndDamage : MonoBehaviour
     private PlayerWeaponsFire _playerWeapon;
     private SpawnManager _spawnManager;
 
+    private CameraShake _cameraShake;
+
     private void Start()
     {
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
@@ -28,6 +30,12 @@ public class PlayerHealthAndDamage : MonoBehaviour
             Debug.LogError("Player Weapon is NULL");
         }
 
+        _cameraShake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+        if (_cameraShake == null)
+        {
+            Debug.LogError("Camera Shake is NULL.");
+        }
+
         health = _playerWeapon._weaponsPrefab.Length;
         maximumHealth = _playerWeapon._weaponsPrefab.Length;
     }
@@ -35,6 +43,8 @@ public class PlayerHealthAndDamage : MonoBehaviour
     public void PlayerDamage()
     {
         health -= 1;
+
+        StartCoroutine(_cameraShake.Shake(.3f, 1f));
 
         if (_playerWeapon._weaponPowerLevel > 0)
         {
@@ -44,8 +54,9 @@ public class PlayerHealthAndDamage : MonoBehaviour
 
         if (health <= 0)
         {
-            this.gameObject.SetActive(false);
-            Instantiate(_explosionAnim, transform.position, Quaternion.identity);           
+            health = 1f; //keep in here, used for checkpoint system to reset player health
+            this.gameObject.SetActive(false); //inactive to prevent damage or input
+            Instantiate(_explosionAnim, transform.position, Quaternion.identity);
         }
     }
 
