@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fireball
+  - Wave
+  - Beam
+  - Enemy
+  - FinalBoss
+  - Music
+  - Player_Projectile
+  - Brightness
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -13,9 +22,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - PowerUp
+  - LaserBeam
   - 
   - 
   - 
