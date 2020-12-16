@@ -26,7 +26,6 @@ public class WavePanelManager : MonoBehaviour
     }
     public void UpdateWave(float wave)
     {
-        wave += 1;
         _wave.text = "Wave " + wave.ToString();
         _wave.gameObject.SetActive(true);
     }
