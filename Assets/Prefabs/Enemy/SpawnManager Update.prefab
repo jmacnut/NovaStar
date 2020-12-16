@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1872807981626080901}
   - component: {fileID: 2129149607913777545}
   m_Layer: 0
-  m_Name: SpawnManager 1
+  m_Name: SpawnManager Update
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
     _waveAnim: {fileID: 0}
   - name: Wave 8
     enemy:
-    - {fileID: 2713658611427233250, guid: 64255af2415cc3748b24f10fab93c976, type: 3}
+    - {fileID: 4699281806345667649, guid: a3f933eb7dbb185429c50217f806894d, type: 3}
     - {fileID: 1800837295739870105, guid: a2f2660a1946ad647b701ed9ab9581a2, type: 3}
     - {fileID: 1800837295739870105, guid: 97043559fa2de64479712cdf42244cbd, type: 3}
     count: 5
@@ -104,7 +104,7 @@ MonoBehaviour:
     enemy:
     - {fileID: 1800837295739870105, guid: a2f2660a1946ad647b701ed9ab9581a2, type: 3}
     - {fileID: 1800837295739870105, guid: 97043559fa2de64479712cdf42244cbd, type: 3}
-    - {fileID: 2713658611427233250, guid: 64255af2415cc3748b24f10fab93c976, type: 3}
+    - {fileID: 4699281806345667649, guid: a3f933eb7dbb185429c50217f806894d, type: 3}
     count: 10
     rate: 2
     _waveAnim: {fileID: 0}
@@ -152,7 +152,7 @@ MonoBehaviour:
     _waveAnim: {fileID: 0}
   - name: Wave 15
     enemy:
-    - {fileID: 2713658611427233250, guid: 64255af2415cc3748b24f10fab93c976, type: 3}
+    - {fileID: 4699281806345667649, guid: a3f933eb7dbb185429c50217f806894d, type: 3}
     - {fileID: 1800837295739870105, guid: a2f2660a1946ad647b701ed9ab9581a2, type: 3}
     - {fileID: 1800837295739870105, guid: 97043559fa2de64479712cdf42244cbd, type: 3}
     - {fileID: 5925815399817429637, guid: 69ad86e43afd6e14caf1537e71648a57, type: 3}
@@ -161,7 +161,7 @@ MonoBehaviour:
     _waveAnim: {fileID: 0}
   - name: Wave 16
     enemy:
-    - {fileID: 2713658611427233250, guid: 64255af2415cc3748b24f10fab93c976, type: 3}
+    - {fileID: 4699281806345667649, guid: a3f933eb7dbb185429c50217f806894d, type: 3}
     - {fileID: 1800837295739870105, guid: a2f2660a1946ad647b701ed9ab9581a2, type: 3}
     - {fileID: 1800837295739870105, guid: 97043559fa2de64479712cdf42244cbd, type: 3}
     - {fileID: 5925815399817429637, guid: 69ad86e43afd6e14caf1537e71648a57, type: 3}
@@ -180,5 +180,5 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 0}
   timeBetweenWaves: 5
-  nextWave: 0
+  nextWave: 7
   _checkpointReached: 0
