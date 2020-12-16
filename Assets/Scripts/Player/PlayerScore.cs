@@ -34,4 +34,14 @@ public class PlayerScore : MonoBehaviour
         _scoreUI.UpdateScore(_score);
         Debug.Log("Current Score: " + _score);
     }
+
+    public float GetScore()
+    {
+        return _score;
+    }
+
+    public void SetScore(float newScore)
+    {
+        _score = newScore;
+    }
 }
