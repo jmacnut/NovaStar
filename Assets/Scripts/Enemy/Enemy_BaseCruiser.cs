@@ -93,7 +93,8 @@ public class Enemy_BaseCruiser : EnemyAbstractClass
         }
         else
         {
-            Instantiate(_enemyWeapon, _weaponPos.position, Quaternion.identity);
+            GameObject _firedShot = Instantiate(_enemyWeapon, _weaponPos.position, Quaternion.identity);
+            _firedShot.GetComponent<EnemyShot>()._speed = _shotSpeed;
         }
     }
 
