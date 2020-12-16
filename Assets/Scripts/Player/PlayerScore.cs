@@ -22,11 +22,7 @@ public class PlayerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-           AddScore(10f);
-        }
-
+        
     }
     public void AddScore(float points)
     {

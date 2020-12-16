@@ -109,8 +109,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.667827, y: 2.6744843, z: 12.508017}
-  m_Center: {x: 0, y: 0.2340197, z: 0.6477089}
+  m_Size: {x: 10.667827, y: 3.1831474, z: 12.600497}
+  m_Center: {x: -1.4419567e-15, y: 0.3033843, z: 0.60146856}
 --- !u!114 &-9147613599284364745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,14 +137,15 @@ MonoBehaviour:
     type: 3}
   _weaponPos: {fileID: 1800837295739870105}
   _fireCD: 0
-  _fireRate: 3
+  _fireRate: 4
   _beamHit: 0
   _onScreen: 0
   _dying: 0
-  _iFrameTime: 0.2
-  _beamDamage: 1
+  _iFrameTime: 0
+  _beamDamage: 0
   _explosionSound: {fileID: 8300000, guid: 2945770ade5bbcf44a8453b552374fdd, type: 3}
   _explosionVol: 0
+  _shotSpeed: 65
   _stopPatternActive: 0
   _chargerActive: 0
   _randomPlacementActive: 1
