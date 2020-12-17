@@ -37,7 +37,7 @@ public class EndPanelManager : MonoBehaviour
 
     private void Update()
     {
-        _finalScore.text = "Final Score: " + _playerScore.GetUIScore();
+        //_finalScore.text = "Final Score: " + _playerScore.GetUIScore();
         _finalWave.text = "You survived " + _spawnManager.GetWave().ToString() + " total waves";
     }
 

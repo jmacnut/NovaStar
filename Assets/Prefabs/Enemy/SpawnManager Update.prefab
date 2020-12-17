@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7eacfecf61cbb4890a6d70b56b3c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stopSpawning: 0
+  _playerDied: 0
   _enemyContainer: {fileID: 0}
   waves:
   - name: 'Wave 1 '
@@ -143,7 +145,7 @@ MonoBehaviour:
       type: 3}
   - name: Wave 14
     enemy:
-    - {fileID: 0}
+    - {fileID: 5925815399817429637, guid: 69ad86e43afd6e14caf1537e71648a57, type: 3}
     - {fileID: 1800837295739870105, guid: a2f2660a1946ad647b701ed9ab9581a2, type: 3}
     - {fileID: 1800837295739870105, guid: 97043559fa2de64479712cdf42244cbd, type: 3}
     - {fileID: 4699281806345667649, guid: a3f933eb7dbb185429c50217f806894d, type: 3}
@@ -166,7 +168,7 @@ MonoBehaviour:
     - {fileID: 1800837295739870105, guid: 97043559fa2de64479712cdf42244cbd, type: 3}
     - {fileID: 5925815399817429637, guid: 69ad86e43afd6e14caf1537e71648a57, type: 3}
     count: 15
-    rate: 5
+    rate: 3
     _waveAnim: {fileID: 1081116544371117888, guid: e0ee82493790c9f478fb184840710174,
       type: 3}
   - name: Wave 17
@@ -174,11 +176,11 @@ MonoBehaviour:
     - {fileID: 1800837295739870105, guid: a2f2660a1946ad647b701ed9ab9581a2, type: 3}
     - {fileID: 5925815399817429637, guid: 69ad86e43afd6e14caf1537e71648a57, type: 3}
     count: 15
-    rate: 5
-    _waveAnim: {fileID: 3649050723600265515, guid: 1a341dbc02952a2459512eae3628cb08,
+    rate: 4
+    _waveAnim: {fileID: 8126645068013010188, guid: 4e796615ac2647a4b9554dda7354a44b,
       type: 3}
   spawnPoints:
   - {fileID: 0}
   timeBetweenWaves: 5
-  nextWave: 7
+  nextWave: 0
   _checkpointReached: 0
