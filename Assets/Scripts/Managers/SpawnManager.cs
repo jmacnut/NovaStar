@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [SerializeField]
     private bool _stopSpawning = false;
+    [SerializeField]
+    private bool _playerDied = false;
     [SerializeField] private GameObject _enemyContainer;
 
     // credit to Brackeys start
@@ -31,13 +34,16 @@ public class SpawnManager : MonoBehaviour
     private float waveCountdown;
     private float searchCountdown = 1f;
     private SpawnState state = SpawnState.COUNTING;
-    private bool _playerDied = false;
+    
     private GameObject[] objectsToDestroy;
     private GameObject[] powerupToDestroy;
     private GameObject _player;
     private WavePanelManager _wavePanelManager;
     private PlayerScore _playerScore;
     private Score_Display_UI _scoreDisplayUI;
+    private PlayerHealthAndDamage _playerHP;
+    private BackgroundColorChange _bgColor;
+    private CanvasManager _canvasManager;
 
     void Start()
     {
@@ -45,7 +51,18 @@ public class SpawnManager : MonoBehaviour
         _wavePanelManager = GameObject.Find("Wave_Panel").GetComponent<WavePanelManager>();
         _playerScore = GameObject.Find("Player").GetComponent<PlayerScore>();
         _scoreDisplayUI = GameObject.Find("Canvas").GetComponent<Score_Display_UI>();
+        _playerHP = GameObject.Find("Player").GetComponent<PlayerHealthAndDamage>();
+        _bgColor = GameObject.Find("Environment").GetComponent<BackgroundColorChange>();
+        _canvasManager = GameObject.Find("Canvas").GetComponent<CanvasManager>();
 
+        if (_bgColor == null)
+        {
+            Debug.LogError("Cant find Background color change");
+        }
+        if (_playerHP == null)
+        {
+            Debug.LogError("Cant find Player Hp and Damage");
+        }
         if (_player == null)
         {
             Debug.LogError("Cant find player for SpawnManager");
@@ -76,9 +93,10 @@ public class SpawnManager : MonoBehaviour
             _stopSpawning = false;
             _playerScore.SetScore(0f);
             _scoreDisplayUI.UpdateScore(0f);
+            _canvasManager.SetPlayerDead();
         }
 
-        if (!_player.activeSelf)
+        if (!_player.activeInHierarchy)
         {
             _wavePanelManager.WaveIsDone();
             _stopSpawning = true;
@@ -198,6 +216,8 @@ public class SpawnManager : MonoBehaviour
         _playerDied = true;
         _player.SetActive(true);
         _player.transform.position = new Vector3(-20, 0, 0);
+        _playerHP.PlayerRespawn();
+        _bgColor.FinalBossNotActive();
         DestroyAllObjects();
         WaveCompleted();
     }

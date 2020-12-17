@@ -82,6 +82,7 @@ public class FinalBoss : MonoBehaviour
     [SerializeField] private AudioClip _miniLaserClip;
 
     [SerializeField] private GameObject _bgColorChange;
+    //[SerializeField] private HitFlash _hitFlash;
 
     private CameraShake _cameraShake;
     // Start is called before the first frame update
@@ -91,6 +92,7 @@ public class FinalBoss : MonoBehaviour
         _curHp = _maxHp;
         transform.Rotate(new Vector3(0, 270, 0));
         _anim = GetComponent<Animator>();
+        //_hitFlash = GetComponent<HitFlash>();
 
         if (_anim == null)
         {
@@ -316,6 +318,7 @@ public class FinalBoss : MonoBehaviour
     {
         _curHp -= _damage;
         AudioManager.Instance.PlayEffect(_hitSound, 1.0f);
+        //_hitFlash.DamageFlash();
 
         if (_curHp <= 0f)
         {

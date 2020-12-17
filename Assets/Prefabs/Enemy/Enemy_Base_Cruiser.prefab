@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6739477637114571988}
   - component: {fileID: 6739477637114572587}
   - component: {fileID: -9147613599284364745}
+  - component: {fileID: -6952897565410846811}
   m_Layer: 0
   m_Name: Enemy_Base_Cruiser
   m_TagString: Enemy
@@ -146,8 +147,22 @@ MonoBehaviour:
   _explosionSound: {fileID: 8300000, guid: 2945770ade5bbcf44a8453b552374fdd, type: 3}
   _explosionVol: 0
   _shotSpeed: 65
+  _hitSound: {fileID: 8300000, guid: 2945770ade5bbcf44a8453b552374fdd, type: 3}
+  _hitFlash: {fileID: 0}
   _stopPatternActive: 0
   _chargerActive: 0
   _randomPlacementActive: 1
   _baseSpeed: 15
   _fastSpeed: 15
+--- !u!114 &-6952897565410846811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3361517255514876298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904a742a7659dab488b342068c50bdfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
