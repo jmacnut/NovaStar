@@ -43,11 +43,15 @@ public abstract class EnemyAbstractClass : MonoBehaviour
 
     [SerializeField] public float _shotSpeed;
 
+    [SerializeField] private AudioClip _hitSound;
+    [SerializeField] private HitFlash _hitFlash;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
         _anim = transform.GetComponent<Animator>();
         _boxCollider = transform.GetComponent<BoxCollider>();
+        //_hitFlash = transform.GetComponent<HitFlash>();
 
         _player = GameObject.Find("Player");
 
@@ -86,7 +90,9 @@ public abstract class EnemyAbstractClass : MonoBehaviour
         if (_onScreen)
         {
             Debug.Log("Damage Taken");
-            _hp -= _damageTaken;    
+            _hp -= _damageTaken;
+            AudioManager.Instance.PlayEffect(_hitSound, 1f);
+            //_hitFlash.DamageFlash();
         }
 
         if (_hp <= 0)
@@ -122,7 +128,7 @@ public abstract class EnemyAbstractClass : MonoBehaviour
 
     protected virtual void PowerUp()
     {
-        int randomNum = Random.Range(1, 4);
+        int randomNum = Random.Range(1, 6);
         if (randomNum == 1)
         {
             Instantiate(_powerUpPrefab, transform.position, Quaternion.identity);    
