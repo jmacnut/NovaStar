@@ -15,13 +15,13 @@ Protect your galaxy from outside invaders in this exhilarating space shooter! If
 ◦Challenging game play! Salt not included.
 ◦Multiple boss battles await, your world needs you!
 ◦Game accompanied by upbeat tracks and audio!
-◦Beautifully rendered graphics, and effects!
+◦Beautifully rendered graphics and effects!
 ```
 **Game Instructions and Controls:**
 ```
-◦Use ASWD Keys to control your space fighter! 
+◦Use WASD Keys to control your space fighter! 
 ◦Space bar will employ your weapons systems.
-◦Collect powerups to upgrade your weapons systems, and repair your fighter. 
+◦Collect powerups to upgrade your weapons systems and repair your fighter. 
 ◦Escape key will pause the game, allowing you to adjust options and navigate the menus. 
 ◦Checkpoints will be unlocked as you fight through certain waves.
 ```
