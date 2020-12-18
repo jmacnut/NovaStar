@@ -5,6 +5,7 @@
 </br>
 Protect your galaxy from outside invaders in this exhilarating space shooter! If you love throwback arcade style galaxy shooter games you will love this modern take on the genre! The concept is simple: using lightning-fast reflexes, and a fully upgrade-able weapons system, dodge and battle your way though your enemies to DEFEND YOUR WORLD!
 </br>
+</br>
 
 **Nova Star is an action packed game stacked with features!**
 ```
