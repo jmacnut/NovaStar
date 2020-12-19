@@ -26,4 +26,4 @@ Protect your galaxy from outside invaders in this exhilarating space shooter! If
 ◦Checkpoints will be unlocked as you fight through certain waves.
 ```
 </br>
-Check it out on itch.io at https://gamedevhq.itch.io/nova-star!
+Check it out on itch.io: https://gamedevhq.itch.io/nova-star!
